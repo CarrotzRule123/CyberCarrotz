@@ -28,7 +28,8 @@ async def on_message(message):
             messages=[
                 {"role": "system", "content": "You are a helpful assistant. You are CyberCarrotz. You are an AI language model created by CarrotzRule123."},
                 {"role": "user", "content": message.content[4:]},
-            ]
+            ],
+            max_tokens=200
         )
         await message.channel.send(response.choices[0].message.content)
 
